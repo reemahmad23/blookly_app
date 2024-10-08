@@ -1,3 +1,4 @@
+import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utilities/assets.dart';
 import 'package:bookly_app/core/utilities/styles.dart';
 import 'package:bookly_app/features/home/data/presentation/view_model/views/widgets/custom_app_bar.dart';
@@ -25,7 +26,7 @@ class HomeViewBody extends StatelessWidget {
           ),
           Text(
             'Best Seller',
-            style: Styles.titleNedium,
+            style: Styles.textStyle18.copyWith(fontFamily: kGtSectraFine),
             ),
             BestSellerListViewItem(),
         ],
