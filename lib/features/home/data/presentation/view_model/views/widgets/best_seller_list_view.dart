@@ -2,6 +2,7 @@
 import 'package:bookly_app/constants.dart';
 import 'package:bookly_app/core/utilities/assets.dart';
 import 'package:bookly_app/core/utilities/styles.dart';
+import 'package:bookly_app/features/home/data/presentation/view_model/views/widgets/book_rating.dart';
 import 'package:flutter/material.dart';
 
 class BestSellerListViewItem extends StatelessWidget {
@@ -31,36 +32,40 @@ class BestSellerListViewItem extends StatelessWidget {
             width: 30,
           ),
 
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                width: MediaQuery.of(context).size.width * .5,
-                child: Text('Sirdab and Assell and Zicola Land',
-                overflow: TextOverflow.ellipsis,
-                maxLines: 2,
-                style: Styles.textStyle20.copyWith(fontFamily: kGtSectraFine),
-                ),
-                ),
-                const SizedBox(
-                  height: 3,
-                ),
-                Text('Amr AbdElhamied',
-                style: Styles.textStyle14,
-                ),
-                const SizedBox(
-                  height: 3,
-                ),
-                Row(
-                  children: [
-                    Text('19.99 Ds',
-                    style: Styles.textStyle20.copyWith(
-                      fontWeight: FontWeight.bold
-                    ),
-                    ),
-                  ],
-                )
-            ],
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * .5,
+                  child: Text('Sirdab and Assell and Zicola Land',
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 2,
+                  style: Styles.textStyle20.copyWith(fontFamily: kGtSectraFine),
+                  ),
+                  ),
+                  const SizedBox(
+                    height: 3,
+                  ),
+                  Text('Amr AbdElhamied',
+                  style: Styles.textStyle14,
+                  ),
+                  const SizedBox(
+                    height: 3,
+                  ),
+                  Row(
+                    children: [
+                      Text('19.99 Ds',
+                      style: Styles.textStyle20.copyWith(
+                        fontWeight: FontWeight.bold
+                      ),
+                      ),
+                      Spacer(),
+                      BookRating(),
+                    ],
+                  )
+              ],
+            ),
           )
         ],
       ),
