@@ -1,4 +1,5 @@
 import 'package:bookly_app/core/utilities/styles.dart';
+import 'package:bookly_app/features/home/data/presentation/view_model/views/widgets/book_rating.dart';
 import 'package:bookly_app/features/home/data/presentation/view_model/views/widgets/custom_book_details_app_bar.dart';
 import 'package:bookly_app/features/home/data/presentation/view_model/views/widgets/custom_list_view_item.dart';
 import 'package:bookly_app/features/home/data/presentation/view_model/views/widgets/featured_list_view.dart';
@@ -19,7 +20,7 @@ class BookDetailsViewBody extends StatelessWidget {
                 padding: EdgeInsets.symmetric(horizontal: width *.30),
                 child: CustomListViewItem(),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 43,
               ),
               Text('Zycola s Land',
@@ -40,9 +41,11 @@ class BookDetailsViewBody extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 6,
+                height: 8,
               ),
-
+            BookRating(
+              mainAxisAlignment: MainAxisAlignment.center,
+            ),
         ],
       ),
     );
