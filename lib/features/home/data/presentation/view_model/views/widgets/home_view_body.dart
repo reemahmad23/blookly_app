@@ -14,31 +14,61 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 30),
-      child: Column(
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const CustomAppBar(),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: const CustomAppBar(),
+          ),
       
           FeaturedBooksListView(),
           SizedBox(
             height: 40,
           ),
-          Text(
-            'Best Seller',
-            style: Styles.textStyle18,
-            ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: Text(
+              'Best Seller',
+              style: Styles.textStyle18,
+              ),
+          ),
             SizedBox(
               height: 10,
             ),
-        
-            BestSellerListViewItem(),
-            
-
         ],
+      
+    ),
+  ),
+    SliverFillRemaining(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 30),
+        child: BestSellerListView(),
       ),
+    )
+      ],
     );
   }
 }
 
+class BestSellerListView extends StatelessWidget {
+  const BestSellerListView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      physics: NeverScrollableScrollPhysics(),
+      padding: EdgeInsets.zero,
+      itemCount: 10,
+      itemBuilder: (context, index) {
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8),
+          child: BestSellerListViewItem(),
+        );
+      },
+    );
+    }
+}
